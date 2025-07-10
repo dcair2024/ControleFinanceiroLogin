@@ -1,0 +1,10 @@
+﻿@model ControleFinanceiroLogin.Models.Despesa
+
+<h2>Deseja excluir a despesa abaixo?</h2>
+
+<p><strong>@Model.Descricao</strong> - R$ @Model.Valor - @Model.Data.ToShortDateString()</p>
+
+<form asp-action="Excluir" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Confirmar Exclusão</button>
+</form>

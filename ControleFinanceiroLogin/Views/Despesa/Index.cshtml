@@ -1,0 +1,26 @@
+﻿@model List<ControleFinanceiroLogin.Models.Despesa>
+
+<h2>Minhas Despesas</h2>
+
+<a asp-action="Criar">Nova Despesa</a>
+
+<table>
+    <tr>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Ações</th>
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.Descricao</td>
+            <td>R$ @d.Valor</td>
+            <td>@d.Data.ToShortDateString()</td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@d.Id">Editar</a> |
+                <a asp-action="Excluir" asp-route-id="@d.Id">Excluir</a>
+            </td>
+        </tr>
+    }
+</table>

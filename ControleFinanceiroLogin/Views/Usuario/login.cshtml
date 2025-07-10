@@ -1,0 +1,12 @@
+﻿<h2>Login</h2>
+
+@if (ViewBag.Erro != null)
+{
+    <div style="color:red">@ViewBag.Erro</div>
+}
+
+<form asp-action="Login">
+    <input name="email" type="email" placeholder="Email" required />
+    <input name="senha" type="password" placeholder="Senha" required />
+    <button type="submit">Entrar</button>
+</form>
